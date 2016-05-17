@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)file:///C:/Users/qzez/Desktop/Behind%20the%20Pixels%20-%20%E7%9F%A5%E4%B9%8E%E4%B8%93%E6%A0%8F.html -->
+<html class="no-touch"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Jason Ghost</title>
+    <!--<base href="/">--><!--<base href=".">--><base href=".">
+    <meta name="fragment" content="!">
+    <meta name="description" content="知乎专栏">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <!--[if lt IE 9]>
+      <script src="https://z1.zhimg.com/components/es5-shim/es5-shim.js"></script>
+      <script src="https://z1.zhimg.com/components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+      <script src="https://z1.zhimg.com/components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./index_files/9c4d58fc.main.css">
+  </head>
+  <body ng-app="columnWebApp" ng-controller="AppCtrl" ng-class="pageClass" class="ng-scope ng-animate column-view">
+    <!--[if lt IE 8]>
+    <p class="browsehappy">
+      你正在使用一个<strong>过时</strong>的浏览器。请<a class="link" href="http://browsehappy.com">升级你的浏览器</a>以查看此页面。</p>
+    </p>
+    <![endif]-->
+
+    <div id="header-holder">
+        <!-- ngInclude: navbarTemplateUrl --><div ng-include="navbarTemplateUrl" class="ng-scope">
+<header id="header" class="navbar ng-scope ng-isolate-scope sbfixed sbfixed-show" ng-controller="NavbarCtrl" ui-scroll-back-fixed="" fixed="scrollBackFixedNavbar" style="display: block;">
+  <div class="navbar-logo-container">
+    <a href="https://www.zhihu.com/people/g1n0st" target="_blank" class="logo icon-ic_zhihu_logo" aria-label="知乎主页"></a>
+  </div>
+
+  <div class="navbar-content">
+  </div>
+
+</header>
+</div>
+    </div>
+
+    <div class="ui-alertbar info ng-hide" ng-show="show" ui-alertbar="" data-alert="globalAlert" ui-sticky="" data-align="bottom" data-target="#header-holder">
+  <!-- ngIf: alert.type == 'info' --><i class="icon-ic_prompt_done ng-scope" ng-if="alert.type == &#39;info&#39;"></i><!-- end ngIf: alert.type == 'info' -->
+  <!-- ngIf: alert.type == 'error' -->
+
+</div>
+
+    <!-- Add your site or application content here -->
+    <!-- ngView:  --><main class="main-container ng-scope" ng-view="">
+<div class="main receptacle ng-scope">
+
+  <div class="column-about" ng-switch="columnType == &#39;user&#39;">
+    <div class="avatar-link">
+      <img class="avatar-big" ng-src="https://avatars3.githubusercontent.com/u/9883186?v=3&amp;s=256" src="./index_files/9883186">
+    </div>
+    <div href="/graphics" class="title ng-binding">Jason Ghost</div>
+    <div class="description ng-binding" ng-bind-html="column.intro | linky">I have a dream so I never take EXHAUST.</div>
+    <!-- ngSwitchWhen: false --><div class="functions ng-scope" ng-switch-when="false" ng-hide="column.activateState != &#39;activated&#39;">
+      <!-- ngIf: column.canManage -->
+    </div>
+  </div>
+
+
+  <!-- ngIf: postsSource --><div class="items-container ng-scope ui-infinite" ui-infinite="" data-source="postsSource" ng-if="postsSource" ng-hide="!postsSource.pending &amp;&amp; !posts.length &amp;&amp; !recommendPosts.length">
+    <!-- ngIf: !currentAuthor --><div class="block-title ng-scope" ng-class="scope.help &amp;&amp; block-title-help" ng-show="posts.length" ng-if="!currentAuthor">
+  <span ng-transclude=""><span class="ng-binding ng-scope">文章</span></span>
+  <!-- ngIf: help -->
+</div><!-- end ngIf: !currentAuthor -->
+
+<ul class="items" ng-show="posts.length">
+
+
+
+
+
+      <!-- ngRepeat: post in posts track by $index --><li class="item ng-isolate-scope item-with-title-img" ng-class="itemClass" ng-repeat="post in posts track by $index" post="post" column="column">
+  <article class="hentry" ui-in-view="" oninviewonce="post.touch()">
+    <a href="https://zhuanlan.zhihu.com/p/20861061?refer=graphics" class="entry-link">
+      <h1 class="entry-title ng-binding">BZOJ1015 Starwar</h1>
+
+      <!-- ngIf: titleImageShow --><div class="title-img-container ng-scope" ng-if="titleImageShow">
+        <div class="title-img-preview" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + post.titleImage + &#39;)&#39;}" style="background-image: url(https://pic3.zhimg.com/dfa32ae51883a990991689d180a1b446_b.jpg);">
+        </div>
+      </div><!-- end ngIf: titleImageShow -->
+
+      <!-- ngIf: !titleImageShow -->
+
+      <section class="entry-summary">
+        <p ui-summary="post.content" max="truncateMax" class="ng-isolate-scope">很久以前，在一个遥远的星系，一个黑暗的帝国靠着它的超级武器统治者整个星系。某一天，凭着一个偶然的…
+          <span class="read-all">查看全文<i class="icon-ic_unfold"></i></span>
+        </p>
+      </section>
+    </a>
+
+    <footer>
+      <div class="entry-meta">
+        <a target="_blank" href="https://www.zhihu.com/people/g1n0st" class="author name ng-binding">Jason Ghost</a>
+        <!-- ngIf: showRecommend -->
+        <!-- ngIf: showRecommend -->
+      </div>
+      </footer></article></li></ul></div><!-- end ngIf: !showSource -->
+
+      <!-- ngIf: showSource && post.column -->
+    
+
+
+  
+
+
+
+
+
+
+
+
+  </div><!-- end ngIf: postsSource -->
+
+
+  <div class="modal-dialog-buttons"></div>
+<div class="modal-dialog-content"></div>
+</main>
+
+
+</body></html>
