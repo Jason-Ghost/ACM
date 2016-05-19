@@ -76,7 +76,7 @@
 
       <!-- ngRepeat: post in posts track by $index --><li class="item ng-isolate-scope item-with-title-img" ng-class="itemClass" ng-repeat="post in posts track by $index" post="post" column="column">
   <article class="hentry" ui-in-view="" oninviewonce="post.touch()">
-    <a href="BZOJ1015.html" class="entry-link">
+    <a href="solution/BZOJ1015.html" class="entry-link">
       <h1 class="entry-title ng-binding">BZOJ1015 Starwar</h1>
 
       <!-- ngIf: titleImageShow --><div class="title-img-container ng-scope" ng-if="titleImageShow">
@@ -91,7 +91,25 @@
           <span class="read-all">查看全文<i class="icon-ic_unfold"></i></span>
         </p>
       </section>
-    </a>
+    </a> <article>
+
+  <article class="hentry" ui-in-view="" oninviewonce="post.touch()">
+    <a href="solution/BZOJ1051.html" class="entry-link">
+      <h1 class="entry-title ng-binding">BZOJ1051 & POJ2186 [Tarjan or Gabow]</h1>
+
+      <!-- ngIf: titleImageShow --><div class="title-img-container ng-scope" ng-if="titleImageShow">
+        <div class="title-img-preview" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + post.titleImage + &#39;)&#39;}" style="background-image: url(https://pic3.zhimg.com/97ff003294d65930b044f0a88f0c387a_b.png);">
+        </div>
+      </div><!-- end ngIf: titleImageShow -->
+
+      <!-- ngIf: !titleImageShow -->
+
+      <section class="entry-summary">
+        <p ui-summary="post.content" max="truncateMax" class="ng-isolate-scope">每一头牛的愿望就是变成一头最受欢迎的牛。现在有N头牛，给你M对整数(A,B)，表示牛A认为牛B受欢迎…
+          <span class="read-all">查看全文<i class="icon-ic_unfold"></i></span>
+        </p>
+      </section>
+    </a> <article>
 
     <footer>
       <div class="entry-meta">
