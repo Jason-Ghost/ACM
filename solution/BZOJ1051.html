@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="no-touch"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BZOJ1051 &amp; POJ2186 [Tarjan or Gabow] - g1n0st的文章 - 知乎专栏</title>
+    <!--<base href="/">--><base href=".">
+    <meta name="fragment" content="!">
+    <meta name="description" content="知乎专栏">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <!--[if lt IE 9]>
+      <script src="https://z1.zhimg.com/components/es5-shim/es5-shim.js"></script>
+      <script src="https://z1.zhimg.com/components/html5shiv/dist/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+      <script src="https://z1.zhimg.com/components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <script src="./BZOJ1051_files/ga.js" async=""></script><script>document.documentElement.className += ('ontouchstart' in window) ? ' touch' : ' no-touch'</script>
+    <link rel="stylesheet" href="./BZOJ1051_files/9c4d58fc.main.css">
+  </head>
+  <body ng-app="columnWebApp" ng-controller="AppCtrl" ng-class="pageClass" class="ng-scope ng-animate page-post-view">
+    <!--[if lt IE 8]>
+    <p class="browsehappy">
+      你正在使用一个<strong>过时</strong>的浏览器。请<a class="link" href="http://browsehappy.com">升级你的浏览器</a>以查看此页面。</p>
+    </p>
+    <![endif]-->
+
+    <div id="header-holder">
+        <!-- ngInclude: navbarTemplateUrl --><div ng-include="navbarTemplateUrl" class="ng-scope">
+<header id="header" class="navbar ng-scope ng-isolate-scope" ng-controller="NavbarCtrl" ui-scroll-back-fixed="" fixed="scrollBackFixedNavbar">
+  <div class="navbar-logo-container">
+    <a href="https://www.zhihu.com/people/g1n0st/" target="_blank" class="logo icon-ic_zhihu_logo" aria-label="知乎首页"></a>
+  </div>
+
+  <div class="navbar-title-container clearfix show" ng-class="{show: showTitle}" ng-click="handleTitleClick($event)">
+    <!-- ngIf: title.img -->
+    <div class="titles oneline" ng-class="{oneline: !title.sub || !title.main}">
+      <!-- ngIf: title.sub --><div class="subtitle ng-binding ng-scope" ng-if="title.sub" ng-bind-html="title.subtitle"></div><!-- end ngIf: title.sub -->
+      <!-- ngIf: title.main -->
+    </div>
+    <!-- ngIf: title.buttons -->
+    <!-- ngIf: status -->
+  </div>
+
+  
+
+
+  <div class="navbar-content">
+  </div>
+
+</header>
+</div>
+    </div>
+
+    <div class="ui-alertbar info ng-hide" ng-show="show" ui-alertbar="" data-alert="globalAlert" ui-sticky="" data-align="bottom" data-target="#header-holder">
+  <!-- ngIf: alert.type == 'info' --><i class="icon-ic_prompt_done ng-scope" ng-if="alert.type == &#39;info&#39;"></i><!-- end ngIf: alert.type == 'info' -->
+  <!-- ngIf: alert.type == 'error' -->
+  
+</div>
+
+    <!-- Add your site or application content here -->
+    <!-- ngView:  --><main class="main-container ng-scope" ng-view="">
+<!-- ngIf: !notFound --><div class="main receptacle post-view ng-scope" ng-class="post.isTitleImageFullScreen &amp;&amp; winType != &#39;small&#39; &amp;&amp; !isCensoring &amp;&amp; &#39;full-screen-cover&#39;" ng-if="!notFound">
+
+  <article class="entry" ui-lightbox="">
+    <header>
+      <!-- ngIf: post.titleImage && !isCensoring --><div class="entry-title-image ng-scope" ng-if="post.titleImage &amp;&amp; !isCensoring" ng-switch="!!(post.titleImageSize.width || (winType != &#39;small&#39; &amp;&amp; post.isTitleImageFullScreen))">
+        <!-- ngSwitchWhen: true --><div ng-switch-when="true" class="img ng-scope" ng-style="{&#39;background-image&#39;: &#39;url(https://pic3.zhimg.com/97ff003294d65930b044f0a88f0c387a_b.png)&#39;, &#39;height&#39;: (winType == &#39;small&#39; || !post.isTitleImageFullScreen) ? (winSize * post.titleImageSize.height / post.titleImageSize.width + &#39;px&#39; ) : &#39;&#39; }" style="height: 384.895px; background-image: url(&quot;https://pic3.zhimg.com/97ff003294d65930b044f0a88f0c387a_b.png&quot;);"></div>
+        <!-- ngSwitchWhen: false -->
+      </div><!-- end ngIf: post.titleImage && !isCensoring -->
+
+      <div class="placeholder"></div>
+
+      <h1 class="multiline1 entry-title">BZOJ1051 &amp; POJ2186 [Tarjan or Gabow]</h1>
+
+      <div class="entry-meta">
+        <a target="_blank" href="https://www.zhihu.com/people/g1n0st" class="author name ng-binding">
+          <img ng-src="https://pic4.zhimg.com/514c40fd7b9047bfd1508181801f8893_xs.jpg" alt="" class="avatar-small" src="./BZOJ1051_files/514c40fd7b9047bfd1508181801f8893_xs.jpg">g1n0st</a>
+        <span class="bull">·</span>
+        <time ng-class="{short: timeStyle == &#39;short&#39;}" ui-hover-title="class="published ng-binding ng-isolate-scope hover-title">2016.5.3</time>
+      </div>
+    </header>
+
+    <!-- ngIf: isCensoring -->
+
+    <!-- ngIf: ownPost(post) || !isCensoring --><section class="entry-content ng-binding ng-scope" ng-bind-html="postContentTrustedHtml" ui-copyright-check="" data-entry-url="/p/20926349" data-author-name="g1n0st" ng-if="ownPost(post) || !isCensoring"><h2><b>BZOJ1051 &amp; POJ2186 [Tarjan or Gabow]</b></h2><p><a href="https://link.zhihu.com/?target=http%3A//www.lydsy.com/JudgeOnline/problem.php%3Fid%3D1051" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://www.</span><span class="visible">lydsy.com/JudgeOnline/p</span><span class="invisible">roblem.php?id=1051</span><span class="ellipsis"></span><i class="icon-external"></i></a><br></p><h2>0x00 题目描述</h2><p><b>BZOJ</b></p><br><blockquote>每一头牛的愿望就是变成一头最受欢迎的牛。现在有N头牛，给你M对整数(A,B)，表示牛A认为牛B受欢迎。 这种关系是具有传递性的，如果A认为B受欢迎，B认为C受欢迎，那么牛A也认为牛C受欢迎。你的任务是求出有多少头牛被所有的牛认为是受欢迎的。<br></blockquote><p><b>POJ</b></p><blockquote>Every cow's dream is to become the most popular cow in the herd. In a herd of N (1 &lt;= N &lt;= 10,000) cows, you are given up to M (1 &lt;= M &lt;= 50,000) ordered pairs of the form (A, B) that tell you that cow A thinks that cow B is popular. Since popularity is transitive, if A thinks B is popular and B thinks C is popular, then A will also think that C is <br>popular, even if this is not explicitly specified by an ordered pair in the input. Your task is to compute the number of cows that are considered popular by every other cow. </blockquote><h2>0x01 算法分析</h2><p>很显然，这道题是用强连通分量来做的</p><p>以下内容转自<i><a href="https://link.zhihu.com/?target=http%3A//NOCOW.CN" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">NOCOW.CN</span><span class="invisible"></span><i class="icon-external"></i></a></i></p><i><a href="https://link.zhihu.com/?target=http%3A//www.nocow.cn/index.php/%25E5%25BC%25BA%25E8%25BF%259E%25E9%2580%259A%25E5%2588%2586%25E9%2587%258F" class=" wrap external" target="_blank" rel="nofollow noreferrer">强连通分量 - NOCOW<i class="icon-external"></i></a><br></i><p><b>有向图强连通分量的Tarjan算法 [有向图强连通分量]</b></p><p>在有向图G中，如果两个顶点间至少存在一条路径，称两个顶点<b>强连通</b>(strongly connected)。如果有向图G的每两个顶点都强连通，称G是一个强连通图。非强连通图有向图的极大强连通子图，称为<b>强连通分量</b>(strongly connected components)。</p><p>下图中，子图{1,2,3,4}为一个强连通分量，因为顶点1,2,3,4两两可达。{5},{6}也分别是两个强连通分量。</p><br><p>直接根据定义，用双向遍历取交集的方法求强连通分量，时间复杂度为O(N^2+M)。更好的方法是Kosaraju算法或Tarjan算法，两者的时间复杂度都是O(N+M)。本文介绍的是<b>Tarjan</b>算法。</p><p>Tarjan算法是基于对图深度优先搜索的算法，每个强连通分量为搜索树中的一棵子树。</p><p><i><b>证明：根据强连通分量的定义可知，无论从哪一个点开始访问，都可以遍历完整个强连通分量，所以从任意一个点开始遍历，最终整个强连通分量都会在子树当中。</b></i></p><p>搜索时，把当前搜索树中未处理的节点加入一个堆栈，回溯时可以判断栈顶到栈中的节点是否为一个强连通分量。</p><p>定义<b>DFN</b>(u)为节点u搜索的次序编号(时间戳)，<b>Low</b>(u)为u或u的子树能够追溯到的最早的栈中节点的次序号。由定义可以得出：</p><div class="highlight"><pre><code class="language-cpp"><span class="n">Low</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">=</span><span class="n">Min</span>
+<span class="p">{</span>
+   <span class="n">DFN</span><span class="p">(</span><span class="n">u</span><span class="p">),</span>
+   <span class="n">Low</span><span class="p">(</span><span class="n">v</span><span class="p">),(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span><span class="err">为树枝边，</span><span class="n">u</span><span class="err">为</span><span class="n">v</span><span class="err">的父节点</span>
+   <span class="n">DFN</span><span class="p">(</span><span class="n">v</span><span class="p">),(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span><span class="err">为指向栈中节点的后向边</span><span class="p">(</span><span class="err">非横叉边</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><p>当DFN(u)=<b>Low</b>(u)时，以u为根的搜索子树上所有节点是一个强连通分量。</p><p><b><i>证明：如果不是强连通分量的根，那么一定是属于另一个强连通分量，而且它的根是当前顶点的祖宗，那么存在包含当前顶点的到其祖宗的回路，可知low[u]一定被更改为一个比dfn[v]更小的值。（《图论及应用》P115）</i></b></p><p>算法伪代码如下：</p><div class="highlight"><pre><code class="language-cpp"><span class="n">tarjan</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">DFN</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">Low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=++</span><span class="n">Index</span>                      <span class="c1">// 为节点u设定次序编号和Low初值</span>
+	<span class="n">Stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>                              <span class="c1">// 将节点u压入栈中</span>
+	<span class="k">for</span> <span class="n">each</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="n">in</span> <span class="n">E</span>                       <span class="c1">// 枚举每一条边</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visted</span><span class="p">)</span>               <span class="c1">// 如果节点v未被访问过</span>
+			<span class="n">tarjan</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>                  <span class="c1">// 继续向下找</span>
+			<span class="n">Low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">Low</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">Low</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+		<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">v</span> <span class="n">in</span> <span class="n">S</span><span class="p">)</span>                   <span class="c1">// 如果节点v还在栈内</span>
+			<span class="n">Low</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">Low</span><span class="p">[</span><span class="n">u</span><span class="p">],</span> <span class="n">DFN</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">DFN</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">==</span> <span class="n">Low</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>                      <span class="c1">// 如果节点u是强连通分量的根</span>
+		<span class="n">repeat</span>
+			<span class="n">v</span> <span class="o">=</span> <span class="n">S</span><span class="p">.</span><span class="n">pop</span>                  <span class="c1">// 将v退栈，为该强连通分量中一个顶点</span>
+			<span class="n">print</span> <span class="n">v</span>
+		<span class="n">until</span> <span class="p">(</span><span class="n">u</span><span class="o">==</span> <span class="n">v</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><br><p>接下来是对算法流程的演示。</p><p>从节点1开始DFS，把遍历到的节点加入栈中。搜索到节点u=6时，DFN[6]=LOW[6]，找到了一个强连通分量。退栈到u=v为止，{6}为一个强连通分量。</p><img src="./BZOJ1051_files/97ff003294d65930b044f0a88f0c387a_b.png" data-rawwidth="523" data-rawheight="305" class="origin_image zh-lightbox-thumb" width="523" data-original="https://pic3.zhimg.com/97ff003294d65930b044f0a88f0c387a_r.png"><p>返回节点5，发现DFN[5]=LOW[5]，退栈后{5}为一个强连通分量。<img src="./BZOJ1051_files/597a24d0a03945156eb77b3a7d638a34_b.png" data-rawwidth="523" data-rawheight="335" class="origin_image zh-lightbox-thumb" width="523" data-original="https://pic1.zhimg.com/597a24d0a03945156eb77b3a7d638a34_r.png"></p><p>返回节点3，继续搜索到节点4，把4加入堆栈。发现节点4向节点1有后向边，节点1还在栈中，所以LOW[4]=1。节点6已经出栈，(4,6)是横叉边，返回3，(3,4)为树枝边，所以LOW[3]=LOW[4]=1。<img src="./BZOJ1051_files/1549ac5bfac4874aad418c88d616446d_b.png" data-rawwidth="523" data-rawheight="335" class="origin_image zh-lightbox-thumb" width="523" data-original="https://pic2.zhimg.com/1549ac5bfac4874aad418c88d616446d_r.png"></p><p>继续回到节点1，最后访问节点2。访问边(2,4)，4还在栈中，所以LOW[2]=DFN[4]=5。返回1后，发现DFN[1]=LOW[1]，把栈中节点全部取出，组成一个连通分量{1,3,4,2}。<img src="./BZOJ1051_files/6f4140f67c549622933346e22502acb6_b.png" data-rawwidth="523" data-rawheight="335" class="origin_image zh-lightbox-thumb" width="523" data-original="https://pic3.zhimg.com/6f4140f67c549622933346e22502acb6_r.png"></p><p>至此，算法结束。经过该算法，求出了图中全部的三个强连通分量{1,3,4,2},{5},{6}。</p><p>可以发现，运行Tarjan算法的过程中，每个顶点都被访问了一次，且只进出了一次堆栈，每条边也只被访问了一次，所以该算法的时间复杂度为O(N+M)。</p><p>求有向图的强连通分量还有一个强有力的算法，为Kosaraju算法。Kosaraju是基于对有向图及其逆图两次DFS的方法，其时间复杂度也是 O(N+M)。与Trajan算法相比，Kosaraju算法可能会稍微更直观一些。但是Tarjan只用对原图进行一次DFS，不用建立逆图，更简洁。在实际的测试中，Tarjan算法的运行效率也比Kosaraju算法高30%左右。此外，该Tarjan算法与求无向图的双连通分量(割点、桥)的Tarjan算法也有着很深的联系。学习该Tarjan算法，也有助于深入理解求双连通分量的Tarjan算法，两者可以类比、组合理解。</p><p>求有向图的强连通分量的Tarjan算法是以其发明者Robert Tarjan命名的。Robert Tarjan还发明了求双连通分量的Tarjan算法，以及求最近公共祖先的离线Tarjan算法，在此对Tarjan表示崇高的敬意。</p><p><b>以下是Tarjan算法的代码：</b></p><div class="highlight"><pre><code class="language-cpp"><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">mmin</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="o">?</span> <span class="nl">a</span> <span class="p">:</span> <span class="n">b</span><span class="p">;</span> <span class="p">}</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">tarjan</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">dfn</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="o">++</span> <span class="n">stamp</span><span class="p">;</span>
+    <span class="n">in_stack</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">stack</span><span class="p">[</span><span class="o">++</span> <span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+    
+    <span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">x</span><span class="p">];</span> <span class="n">i</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">next</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">to</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+            <span class="n">tarjan</span><span class="p">(</span><span class="n">v</span><span class="p">),</span>
+            <span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">mmin</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">low</span><span class="p">[</span><span class="n">v</span><span class="p">]);</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">in_stack</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+            <span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">mmin</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">dfn</span><span class="p">[</span><span class="n">v</span><span class="p">]);</span>
+	<span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">dfn</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="p">{</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">stack</span><span class="p">[</span><span class="n">top</span> <span class="o">--</span><span class="p">];</span>
+            <span class="n">kind</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span><span class="p">;</span>
+            <span class="n">in_stack</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">v</span> <span class="o">!=</span> <span class="n">x</span><span class="p">);</span>
+        <span class="n">color</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p><br><br><br>调用的时候只需：</p><div class="highlight"><pre><code class="language-cpp"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="n">dfn</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">tarjan</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 为了防止出现图不连通或从单一节点一次遍历无法将图遍历完全</span>
+</code></pre></div><br><br><p><b>求解有向图强连通分量的Gabow算法</b></p><p>Gabow算法与Tarjan算法的核心思想实质上是相通的,就是利用强连通分量必定是DFS的一棵子树 这个重要性质,通过找出这个子树的根来求解强分量.具体到实现是利用一个栈S来保存DFS遇到的 所有树边的另一端顶点,在找出强分量子树的根之后,弹出S中的顶点一一进行编号. 二者不同的是,Tarjan算法通过一个low数组来维护各个顶点能到达的最小前序编号,而Gabow算法 通过维护另一个栈来取代low数组,将前序编号值更大的顶点都弹出,然后通过栈顶的那个顶点来判断是否找到强分量子树的根。<br></p><p>代码如下：</p><div class="highlight"><pre><code class="language-cpp"><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">S</span><span class="p">,</span> <span class="n">P</span><span class="p">;</span> <span class="c1">// S用来保存所有结点 , P用来维护路径</span>
+<span class="kt">int</span> <span class="n">attain</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">acc</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="n">reduce</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">GabowDFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
+  <span class="n">acc</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="o">++</span><span class="p">;</span> <span class="c1">// 对前序编号编号</span>
+  <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">w</span><span class="p">);</span> <span class="c1">// 讲路径上遇到的树边顶点入栈</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">t</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">w</span><span class="p">];</span> <span class="n">t</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">t</span><span class="p">].</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">acc</span><span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">t</span><span class="p">].</span><span class="n">to</span><span class="p">])</span> <span class="n">GabowDFS</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="c1">// 如果当前顶点以前未遇到,则对其进行DFS</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">attain</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>  <span class="c1">// 否则如果当前顶点不属于强分量</span>
+      <span class="k">while</span><span class="p">(</span><span class="n">acc</span><span class="p">[</span><span class="n">P</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;</span> <span class="n">acc</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span> <span class="c1">// 就将路径栈P中大于当前顶点pre值的顶点都弹出</span>
+  <span class="p">}</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">P</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 如果P栈顶元素等于w,则找到强分量的根,就是w</span>
+    <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="k">do</span> <span class="p">{</span>
+      <span class="n">attain</span><span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">S</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">id</span><span class="p">;</span> <span class="c1">// 把S中的顶点弹出编号</span>
+      <span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">v</span> <span class="o">!=</span> <span class="n">w</span><span class="p">);</span>
+    <span class="o">++</span><span class="n">id</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>由于Gabow算法不用频繁的更新low[]数组，所以更加精妙，时间复杂度同样都是<b>O(m)</b>, <b>Gabow算法</b>常数更小。</p><h2>0x02 题解</h2><p>对于奶牛群来说，我们可以看出一种相互崇拜的关系，如果有一个集合中的的奶牛<img src="./BZOJ1051_files/equation" alt="\left\{ x_{1}, x_{2}x, _{3}x, _{4}x, _{n}  \right\} " eeimg="1">都相互连通（也就是相互崇拜），那么如果有其他的一头奶牛崇拜这个奶牛群中的任意一头奶牛，那么这只奶牛就崇拜这个奶牛群中的所有奶牛，相反如果这群奶牛中的任意一头奶牛崇拜非该群中的一头奶牛，其他所有该群中的奶牛也都崇拜那只群外的奶牛。总结来说，<b>这个集合中的牛在崇拜与被崇拜上具有“共同进退”的性质，甚至可以说它们和一头奶牛没有区别</b>。</p><p>于是，使用上文所说的强连通分量进行缩点，不仅可以减少数据量，同时还可以将一幅<b>杂乱无章的有向图</b>变为一幅<b>有向无环图（若有环则会因为强连通被缩点）</b>。在这张图中，统计出度为0的点，它们就是潜在的满足条件的奶牛的集合。如果点数大于1（<b>注意是缩点后</b>），则说明有两至多群奶牛<b>相互不崇拜（如果只有其中的一群奶牛是被全部崇拜的，那么必然另外所有群的奶牛都有通向这群奶牛或者是间接通向这群奶牛的出度，但是却另外存在出度为0的奶牛群，可证伪）</b>，输出答案0。如果个数恰好等于1（不可能小于1，因为有向无环），则答案就是这个分量中的奶牛的个数。</p><p>所以方法就是 先通过强连通分量染色，然后遍历每一条边，如果这条边连接的是两个颜色不同的点（说明不在同一个强连通分量内），那么就将起点的颜色的出度加1，最后统计所有颜色的出度即可。</p><br><p>完整代码如下：</p><div class="highlight"><pre><code class="language-cpp"><span class="cm">/**************************************************************</span>
+<span class="cm">    Problem: 1051</span>
+<span class="cm">    User: SbVector</span>
+<span class="cm">    Language: C++</span>
+<span class="cm">    Result: Accepted</span>
+<span class="cm">    Time:28 ms</span>
+<span class="cm">    Memory:3780 kb</span>
+<span class="cm">****************************************************************/</span>
+ 
+<span class="cp">#include &lt;stack&gt;</span>
+<span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;cstdio&gt;</span>
+<span class="cp">#include &lt;cstring&gt;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">MAXE</span> <span class="o">=</span> <span class="mi">100000</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="n">MAXN</span> <span class="o">=</span> <span class="mi">100000</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">head</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="n">sub</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">E</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">to</span><span class="p">,</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">edge</span><span class="p">[</span><span class="n">MAXE</span><span class="p">];</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">AddEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 链式前向星建边部分</span>
+  <span class="n">E</span> <span class="o">&amp;</span><span class="n">e</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">sub</span><span class="p">];</span>
+  <span class="n">e</span><span class="p">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">a</span><span class="p">],</span> <span class="n">head</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">sub</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">inline</span> <span class="kt">char</span> <span class="nf">NC</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">100000</span><span class="p">],</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="n">buf</span><span class="p">,</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="n">buf</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="p">(</span><span class="n">p1</span> <span class="o">=</span> <span class="n">buf</span><span class="p">)</span> <span class="o">+</span> <span class="n">fread</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span> <span class="k">return</span> <span class="n">EOF</span><span class="p">;</span>
+  <span class="p">}</span>
+    <span class="k">return</span> <span class="o">*</span><span class="n">p1</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">read</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">NC</span><span class="p">();</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(;</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="sc">'0'</span> <span class="o">||</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="sc">'9'</span><span class="p">);</span> <span class="n">c</span> <span class="o">=</span> <span class="n">NC</span><span class="p">());</span>
+  <span class="k">for</span><span class="p">(;</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="sc">'0'</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">'9'</span><span class="p">;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="sc">'0'</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">NC</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">S</span><span class="p">,</span> <span class="n">P</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">attain</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">acc</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">reduce</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">GabowDFS</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
+  <span class="n">acc</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span><span class="o">++</span><span class="p">;</span>
+  <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">w</span><span class="p">),</span> <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">t</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">w</span><span class="p">];</span> <span class="n">t</span><span class="p">;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">t</span><span class="p">].</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">acc</span><span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">t</span><span class="p">].</span><span class="n">to</span><span class="p">])</span> <span class="n">GabowDFS</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">attain</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+      <span class="k">while</span><span class="p">(</span><span class="n">acc</span><span class="p">[</span><span class="n">P</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">&gt;</span> <span class="n">acc</span><span class="p">[</span><span class="n">v</span><span class="p">])</span> <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">P</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">==</span> <span class="n">w</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="k">do</span> <span class="p">{</span>
+      <span class="n">attain</span><span class="p">[</span><span class="n">v</span> <span class="o">=</span> <span class="n">S</span><span class="p">.</span><span class="n">top</span><span class="p">()]</span> <span class="o">=</span> <span class="n">id</span><span class="p">;</span>
+      <span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">v</span> <span class="o">!=</span> <span class="n">w</span><span class="p">);</span>
+    <span class="o">++</span><span class="n">id</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//freopen("in.txt", "r", stdin);</span>
+  <span class="k">register</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+  <span class="n">read</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">read</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">read</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">AddEdge</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">acc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">GabowDFS</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">reduce</span><span class="p">[</span><span class="n">attain</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span> <span class="k">continue</span><span class="p">;</span> <span class="c1">// 只需要判断入度不为1即可，为1就可以跳过了</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">j</span><span class="p">;</span> <span class="n">j</span> <span class="o">=</span> <span class="n">edge</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">next</span><span class="p">)</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">attain</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">attain</span><span class="p">[</span><span class="n">edge</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">to</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">reduce</span><span class="p">[</span><span class="n">attain</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">id</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">reduce</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">total</span><span class="o">++</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">total</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//只需在判定后统计单一颜色的即可</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+      <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">attain</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">res</span><span class="p">);</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="n">puts</span><span class="p">(</span><span class="s">"0"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>这个算法加上读入优化以后跑起来效率十分可观 <img src="./BZOJ1051_files/equation(1)" alt="\leq 30ms" eeimg="1">。</p><img src="./BZOJ1051_files/b5e0b54db1a43f48d8a3318a2ec9526a_b.png" data-rawwidth="960" data-rawheight="600" class="origin_image zh-lightbox-thumb" width="960" data-original="https://pic3.zhimg.com/b5e0b54db1a43f48d8a3318a2ec9526a_r.png"><br><p>完。</p></section><!-- end ngIf: ownPost(post) || !isCensoring -->
+
+    
+
+
+<div></div><style>html.lightbox-zoomin body {padding-right: 17px;}</style></body></html>
